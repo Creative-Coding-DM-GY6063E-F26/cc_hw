@@ -1,0 +1,5 @@
+GitHub Repository
+
+https://github.com/tixl3d/tixl
+
+This repository has several different realtime animation tools to create different reactive effects. This would be useful for different kinds of audio visualization or animations.
