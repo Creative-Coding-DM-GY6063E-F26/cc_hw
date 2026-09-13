@@ -18,7 +18,7 @@ let current = [];
 
 function setup() {
   console.log("QUOTES ARRAY:", quotes)
-  console.log("QUOTE INDEX 1 TEXT:", quotes[1].text)
+  // console.log("QUOTE INDEX 1 TEXT:", quotes[1].text)
   createCanvas(windowWidth, windowHeight);
   randomSeed(millis());
   pickQuote(); // calls the function to pick a quote
@@ -32,17 +32,17 @@ function pickQuote() {
 }
 
 function draw() {
-  background(255, 20, 250);
+  background(8, 127, 140);
   drawQuote(); // draw the quote on screen
 }
 
 function drawQuote() {
   // draw text
-  fill(10, 255, 10);
+  fill(224, 255, 251);
   textAlign(CENTER, CENTER);
-  text("Creative Coding is.....", width / 2, height / 2 - 48);
-  textSize(32);
-  textStyle(BOLD);
+  text("creative coding is.....", width / 2, height / 2 - 48);
+  textSize(18);
+  textStyle(ITALIC);
   text("“" + current.text + "”", width / 2, height / 2);
   textAlign(RIGHT, CENTER);
   text("-" + current.source, width - 100, height - 100);
