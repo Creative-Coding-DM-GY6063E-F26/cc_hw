@@ -36,7 +36,7 @@ function drawQuote() {
   // draw text
   fill(10, 255, 10);
   textAlign(CENTER, CENTER);
-  text("Creative Coding is.....", width / 2, height / 2 - 48);
+  text("Creative Coding is.....stellanation", width / 2, height / 2 - 48);
   textSize(32);
   textStyle(BOLD);
   text("“" + current.text + "”", width / 2, height / 2);
