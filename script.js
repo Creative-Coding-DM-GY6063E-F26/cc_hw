@@ -17,6 +17,7 @@ const quotes = [
 let current = [];
 
 function setup() {
+  console.log("quotes array:", quotes)
   createCanvas(windowWidth, windowHeight);
   randomSeed(millis());
   pickQuote(); // calls the function to pick a quote
