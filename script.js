@@ -15,7 +15,6 @@ const quotes = [
 
 // a variable tht holds the current quote
 let current = [];
-let random_num = int;
 
 function setup() {
   console.log("QUOTES ARRAY:", quotes)
@@ -27,8 +26,8 @@ function setup() {
 
 function pickQuote() {
   // take a random number and use that to identify what quote to 
-  random_num = Math.floor(quotes.length);
-  current = quotes[random_num]; 
+  let random_num = Math.floor(Math.random() * quotes.length);
+  current = quotes[random_num];
   console.log("CURRENT ITEM:", current);
 }
 
