@@ -8,7 +8,7 @@ const quotes = [
   { text: "at its heart, creative coding is the practice of using computer programming as a medium for artistic and personal expression.", source: "Laura Valtere" },
   { text: "the practice of combining programming techniques with artistic expression in order to create aesthetically pleasing and optimized interactive digital experiences.", source: "SMU, Meadows School of the Arts" },
   { text: "an approach to programming computers in which the primary goal is to create an aesthetic or expressive experience.", source: "The College of New Jersey" },
-  { text: "a place where experience in the field of design, love of explorative creativity and skills as a programmer come together.", source: "Patrik Hübner" }
+  { text: "a place where experience in the field of design, love of explorative creativity and skills as a programmer come together.", source: "Patrik Hübnern" }
 ];
 // no need to edit anything below this line! 
 // if you have made an error, you can check your history to see what might have gone wrong
@@ -36,7 +36,7 @@ function drawQuote() {
   // draw text
   fill(10, 255, 10);
   textAlign(CENTER, CENTER);
-  text("Creative Coding is.....stellanation", width / 2, height / 2 - 48);
+  text("Creative Coding is.....", width / 2, height / 2 - 48);
   textSize(32);
   textStyle(BOLD);
   text("“" + current.text + "”", width / 2, height / 2);
