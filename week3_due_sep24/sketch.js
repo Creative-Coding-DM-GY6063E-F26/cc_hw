@@ -1,5 +1,20 @@
 function setup() {
   createCanvas(1000, 1000);
+
+  rand_length = 0;
+  rand_direction = 0;
+  randx = 0;
+  randy = 0;
+  rand_opacity = 100;
+  rand_weight = 4;
+  rand_PI_start = 0;
+  rand_PI_end = 0;
+  bez_x_1 = 0;
+  bez_y_1 = 0;
+  bez_x_2 = 0;
+  bez_y_2 = 0;
+
+  
   // bg tan
   background(218,203,181);
   
@@ -21,6 +36,199 @@ function setup() {
   vertex(0,843); 
   endShape(CLOSE);
 
+  
+}
+
+
+function draw(){
+  stroke(100,98,117, 220);
+  strokeWeight(4);
+  // noFill();
+  
+
+  for (i=0; i<50; i++){
+    rand_opacity = random(100,255)
+    rand_weight = random(0.5,5);
+    strokeWeight(rand_weight);
+    stroke(100,98,117,rand_opacity);
+    rand_length = random(100);
+    rand_direction = random(100);
+    randx = random(250);
+    randy = random(350);
+    rand_length += randx;
+    rand_direction += randy;
+    line(randx,randy,rand_length,rand_direction); 
+  }
+
+  for (i=0; i<100; i++){
+    rand_opacity = random(100,255)
+    rand_weight = random(0.5,5);
+    strokeWeight(rand_weight);
+    stroke(100,98,117,rand_opacity);
+
+    randx = random(250);
+    randy = random(120);
+    
+    rand_length = random(100);
+    rand_direction = random(20);
+    rand_length += randx;
+    rand_direction = randy - rand_direction;
+    
+    line(randx,randy,rand_length,rand_direction); 
+  }
+
+  
+  for (i=0; i<100; i++){
+    rand_opacity = random(100,255)
+    rand_weight = random(0.3,5);
+    strokeWeight(rand_weight);
+    stroke(100,98,117,rand_opacity);
+
+    randx = random(250);
+    randy = random(500,750);
+    rand_length = random(randx,100);
+    rand_direction = random(100);
+    rand_length += randx;
+    rand_direction += randy;
+    line(randx,randy,rand_length,rand_direction); 
+  }
+
+  for (i=0; i<100; i++){
+    rand_opacity = random(100,255)
+    rand_weight = random(0.3,5);
+    strokeWeight(rand_weight);
+    stroke(100,98,117,rand_opacity);
+
+    randx = random(1000);
+    randy = random(600,1000);
+    rand_length = random(100);
+    rand_direction = random(100);
+    rand_length += randx;
+    rand_direction = randy - rand_direction
+    line(randx,randy,rand_length,rand_direction);
+  }
+  
+  
+  for (i=0; i<40; i++){
+    rand_length = random(100);
+    rand_direction = random(100);
+    randx = random(250);
+    randy = random(350);
+    rand_length += randx;
+    rand_direction += randy;
+    line(randx,randy,rand_length,rand_direction); 
+  }
+
+
+  for (i=0; i<50; i++){
+    rand_opacity = random(100,255)
+    rand_weight = random(0.3,5);
+    strokeWeight(rand_weight);
+    stroke(100,98,117,rand_opacity);
+
+    randx = random(1000);
+    randy = random(600,1000);
+    rand_length = random(100);
+    rand_direction = random(100);
+    rand_length += randx;
+    rand_direction += randy;
+    line(randx,randy,rand_length,rand_direction);
+  }
+
+  //green poly
+  noStroke();
+  fill(35,138,114);
+  beginShape();
+  vertex(750,150);
+  vertex(880,170);
+  vertex(875,350);
+  vertex(810,368);
+  vertex(740,335);
+  endShape(CLOSE);
+
+  noFill();
+
+  for (i=0; i<60; i++){
+    rand_opacity = random(150,255)
+    rand_weight = random(0.5,4);
+    strokeWeight(rand_weight);
+    stroke(45,44,32,rand_opacity);
+
+    randx = random(550,780);
+    randy = random(160,220);
+    rand_PI_start = random(PI);
+    rand_PI_end = random(2*PI);
+    
+    rand_length = random(40,60);
+    rand_direction = random(30,60);
+    // rand_length += randx;
+    // rand_direction = randy - rand_direction
+    arc(randx,randy,rand_length,rand_direction,rand_PI_start, rand_PI_end);
+  }
+
+  for (i=0; i<80; i++){
+    rand_opacity = random(100,255)
+    rand_weight = random(0.5,5);
+    strokeWeight(rand_weight);
+    stroke(100,98,117,rand_opacity);
+
+    randx = random(750,1000);
+    randy = random(120,260);
+    rand_length = random(50);
+    rand_direction = random(100);
+    rand_length += randx;
+    rand_direction = randy-rand_direction;
+
+    bez_x_1 = randx + (random(30));
+    bez_y_1 = randy + (random(5));
+    bez_x_2 = rand_length + (random(30));
+    bez_y_2 = rand_direction + (random(5));
+    
+    bezier(randx,randy,bez_x_1, bez_y_1, bez_x_2, bez_y_2,rand_length,rand_direction);
+  }
+
+
+  for (i=0; i<80; i++){
+    rand_opacity = random(100,255)
+    rand_weight = random(0.5,5);
+    strokeWeight(rand_weight);
+    stroke(100,98,117,rand_opacity);
+
+    randx = random(250);
+    randy = random(250,300);
+    rand_PI_start = PI;
+    rand_PI_end = random(PI,2*PI);
+    
+    rand_length = random(200,260);
+    rand_direction = random(180,200);
+    // rand_length += randx;
+    // rand_direction = randy - rand_direction
+    arc(randx,randy,rand_length,rand_direction,rand_PI_start, rand_PI_end);
+  }
+
+  for (i=0; i<80; i++){
+    rand_opacity = random(100,255)
+    rand_weight = random(0.5,5);
+    strokeWeight(rand_weight);
+    stroke(40,40,37,rand_opacity);
+
+    randx = random(0,260);
+    randy = random(800,1000);
+    rand_length = random(50);
+    rand_direction = random(50);
+    rand_length += randx;
+    rand_direction += randy;
+
+    bez_x_1 = randx + (random(30));
+    bez_y_1 = randy + (random(5));
+    bez_x_2 = rand_length + (random(30));
+    bez_y_2 = rand_direction + (random(5));
+    
+    bezier(randx,randy,bez_x_1, bez_y_1, bez_x_2, bez_y_2,rand_length,rand_direction);
+  }
+
+  noStroke();
+  
   //orange diamond
   fill(234,111,59);
   quad(550,200,790,540,595,850,340,500);
@@ -34,6 +242,7 @@ function setup() {
   quad(210,0,300,0,300,50,210,80);
   quad(90,48,145,45,140,180,85,190);
   quad(10,320,280,140,355,140,55,325);
+  quad(20,420,410,285,480,300,100,440);
 
   
   //blue
@@ -95,13 +304,13 @@ function setup() {
   fill(35,139,114);
   rect(700,880,30,120);
   rect(770,880,30,120);
-  beginShape();
-  vertex(750,150);
-  vertex(880,170);
-  vertex(875,350);
-  vertex(810,368);
-  vertex(740,335);
-  endShape(CLOSE);
+  // beginShape();
+  // vertex(750,150);
+  // vertex(880,170);
+  // vertex(875,350);
+  // vertex(810,368);
+  // vertex(740,335);
+  // endShape(CLOSE);
   triangle(280,430,430,460,280,460);
 
   
@@ -129,6 +338,5 @@ function setup() {
   arc(798, 680, 140, 140, (1.3*PI), PI+(.55*PI));
   
   fill(74,91,103);
-  
-  
+  noLoop();
 }
