@@ -14,6 +14,10 @@ function setup() {
   bez_x_2 = 0;
   bez_y_2 = 0;
 
+  tan_circle_x = 0;
+  tan_circle_y = 0;
+  tan_circle_d = 30;
+
   
   // bg tan
   background(218,203,181);
@@ -146,6 +150,11 @@ function draw(){
   vertex(740,335);
   endShape(CLOSE);
 
+  
+  //yellow bottom left
+  fill(238,186,47);
+  quad(120,840,500,1000,180,1000,120,840);
+
   noFill();
 
   for (i=0; i<60; i++){
@@ -189,10 +198,10 @@ function draw(){
 
 
   for (i=0; i<80; i++){
-    rand_opacity = random(100,255)
+    rand_opacity = random(100,230)
     rand_weight = random(0.5,5);
     strokeWeight(rand_weight);
-    stroke(100,98,117,rand_opacity);
+    stroke(70,70,77,rand_opacity);
 
     randx = random(250);
     randy = random(250,300);
@@ -254,10 +263,6 @@ function draw(){
   rect(120,100,570,12);
   triangle(0,52,30,48,0,165);
   triangle(130,32,180,24,155,130)
-
-  //yellow bottom left
-  fill(238,186,47);
-  quad(120,840,500,1000,180,1000,120,840);
 
   //green rect
   fill(35,138,114);
@@ -336,7 +341,39 @@ function draw(){
   stroke(238,186,47);
   strokeWeight(37);
   arc(798, 680, 140, 140, (1.3*PI), PI+(.55*PI));
+
+  fill(195,144,99);
+
+  noStroke();
+
+  //grid of tan circles
+  tan_circle_x = 640;
+  tan_circle_y = 270;
+  vert_spacing = 0;
+  hor_spacing = 0;
   
-  fill(74,91,103);
+  for(i=0; i<6; i++){
+    
+    for(j=0; j<8; j++){
+
+      circle(tan_circle_x, tan_circle_y, tan_circle_d);
+      tan_circle_x += 50;
+      tan_circle_y -= 5;
+      
+      print(`nested j: ${j}`)
+    }
+
+    tan_circle_x = 640;
+    tan_circle_y = 270;
+
+    vert_spacing += 40;
+    hor_spacing += 3;
+
+    tan_circle_x -= hor_spacing;
+    tan_circle_y += vert_spacing;
+    
+    print(`i: ${i}`)
+    
+  }
   noLoop();
 }
